@@ -10,6 +10,7 @@ function App() {
     <>
       <div>
         <h1>PW3 - WEBAPP - LIVRARIA</h1>
+        
         <BookCard 
           titulo ='Solitaire' 
           autor = 'Alice Oseman'
