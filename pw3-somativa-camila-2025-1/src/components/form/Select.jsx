@@ -14,6 +14,7 @@ function Select ({text, name, id, handlerChange}) {
                 <option value="">Fantasia heroica</option>
                 <option value="">Suspense</option>
                 <option value="">Terror</option>
+                <option value="">Romance</option>
 
             </select>
         </div>
