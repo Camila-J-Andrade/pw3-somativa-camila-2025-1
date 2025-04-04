@@ -21,13 +21,15 @@ const CreateBook = ()=> {
 
     /*CAPTURA DE DADOS DO ELEMENTO DE SELECT*/ 
     function handlerChangeCategory(event){
-        setBook({...book, cod_categoria : event.target.options[event.target.selectedIndex].text});
+        setBook({...book, cod_categoria : event.target.options[event.target.selectedIndex].value});
     }
 
     /* ENVIO DOS DADOS PARA A API */
     function submit(event){
         event.preventDefault();
-        console.log(book)
+        console.log(book);
+
+        insertBook(book);
     }
 
     /* RECUPERA OS DADOS DE CATEGORIA DA API REST */
@@ -44,10 +46,33 @@ const CreateBook = ()=> {
             response.json()
         ).then((categorias) => {
             console.log('TESTE: ' + categorias.data);
+            setCategories(categorias.data);
         }).catch((error)=> {
             console.log('ERRO: ' + error);
         })
     }, []);
+
+    /* INSERÇÃO DE LIVRO */
+    function insertBook(book) {
+
+        fetch('http://127.0.0.1:5000/inserirLivro',{
+            method: 'POST',
+            mode:'cors',
+            headers: {
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Controle-Allow-Headers':'*'
+            },
+            body: JSON.stringify(book)
+        }).then((response) => 
+            response.json()
+        ).then((respJSON) => {
+            console.log('TESTE: ' + respJSON);
+        }).catch((error)=> {
+            console.log('ERRO: ' + error);
+        })
+
+    }
 
     return(
 
@@ -89,6 +114,7 @@ const CreateBook = ()=> {
                     id='cod_categoria'
                     text='Categoria do livro'
                     handlerChange={handlerChangeCategory}
+                    options={categories}
                 />
 
                 <Button 
