@@ -9,3 +9,9 @@ button{
     background: linear-gradient(180deg, rgba(208,4,53,1) 0%, rgba(252,75,141,1) 100%);
     color: #FFF;
 }
+
+button:hover {
+    background: rgb(208,4,53);
+    background: linear-gradient(180deg, rgb(228, 93, 125) 0%, rgb(255, 175, 204) 100%);
+    color: #FFF;
+}

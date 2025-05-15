@@ -8,7 +8,11 @@ const BookCard = ({cod_livro, nome_livro, autor_livro, imagem}) => {
         <h3 className={styles.titulo}>{nome_livro}</h3>
         <p className={styles.author}>{autor_livro}</p>
         <img src= {imagem} alt = "Imagem da capa"/>
-        <Button label='DETALHE'/>
+        <Button 
+            label='DETALHE'
+            router='/detailBook/'
+            cod_livro={cod_livro}
+        />
     </div>
     )
 }

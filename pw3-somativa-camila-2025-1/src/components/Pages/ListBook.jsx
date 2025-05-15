@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from './ListBook.module.css';
 
 import cavernas from '../../assets/cavernas_aco.jpg';
+import solitaire from '../../assets/CAPA-SOLITAIRE.jpg';
 
 import BookCard from "../BookCard";
 import ContainerBook from "../layout/ContainerBook";
@@ -43,10 +44,11 @@ const ListBook = ()=> {
                         
                         
                         <BookCard
-                        nome_livro = {book.nome_livro}
-                        autor_livro = {book.autor_livro}
-                        imagem = {cavernas}
-                        key = {book.cod_livro}
+                            cod_livro={book.cod_livro}
+                            nome_livro = {book.nome_livro}
+                            autor_livro = {book.autor_livro}
+                            imagem = {solitaire}
+                            key = {book.cod_livro}
                         />
                         
                     ))
