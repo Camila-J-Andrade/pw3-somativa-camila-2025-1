@@ -9,6 +9,7 @@ import Home from './components/Pages/Home';
 import CreateBook from './components/Pages/CreateBook';
 import ListBook from './components/Pages/ListBook';
 import DetailBook from './components/Pages/DetailBook';
+import UpdateBooks from './components/Pages/UpdateBooks';
 
 /* IMPORTAÇÃO DO NAVBAR */
 import NavBar from './components/layout/NavBar';
@@ -34,6 +35,8 @@ function App() {
                 <Route path='/listBook' element={<ListBook />} />
 
                 <Route path='/detailBook/:cod_livro' element={<DetailBook />} />
+
+                <Route path='/updateBook/:cod_livro' element={<UpdateBooks />} />
                 
               </Route>
 
