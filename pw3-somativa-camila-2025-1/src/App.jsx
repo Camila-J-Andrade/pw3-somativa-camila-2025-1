@@ -10,6 +10,7 @@ import CreateBook from './components/Pages/CreateBook';
 import ListBook from './components/Pages/ListBook';
 import DetailBook from './components/Pages/DetailBook';
 import UpdateBooks from './components/Pages/UpdateBooks';
+import DeleteBook from './components/Pages/DeleteBook';
 
 /* IMPORTAÇÃO DO NAVBAR */
 import NavBar from './components/layout/NavBar';
@@ -37,6 +38,8 @@ function App() {
                 <Route path='/detailBook/:cod_livro' element={<DetailBook />} />
 
                 <Route path='/updateBook/:cod_livro' element={<UpdateBooks />} />
+
+                <Route path='/deleteBook/:cod_livro' element={<DeleteBook />} />
                 
               </Route>
 
